@@ -38,11 +38,11 @@ For development with the **latest Anemoi features from main branches** (no lock 
 Feature Testing (Fixed Commit SHAs)
 '''''''''''''''''''''''''''''''''''
 
-For testing specific features with reproducible Anemoi commits, create a feature branch from dev:
+For testing specific features with reproducible Anemoi commits, create a feature branch from **main** (not dev):
 
 .. code-block:: console
 
-    $ git checkout dev
+    $ git checkout main
     $ git checkout -b feature-test/new-graphs
 
 Then edit ``pyproject.toml`` to pin specific commits:
@@ -146,5 +146,3 @@ Or in ``requirements.txt``:
     anemoi-env = { git = "https://github.com/MeteoSwiss/anemoi-env.git", rev = "feature-test/new-graphs" }
 
 This ensures your research uses a specific, reproducible set of dependencies—either from PyPI (stable) or from a pinned feature branch (testing).
-
-.. include:: CHANGELOG.rst
