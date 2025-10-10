@@ -2,6 +2,20 @@
 Anemoi Environments
 ===================
 
+|Maturity| |CI Test| |CI Publish|
+
+.. |Maturity| image:: https://github.com/ecmwf/codex/raw/refs/heads/main/Project%20Maturity/emerging_badge.svg
+   :target: https://github.com/ecmwf/codex/blob/main/Project%20Maturity/readme.md
+   :alt: Project Maturity: Emerging
+
+.. |CI Test| image:: https://github.com/MeteoSwiss/anemoi-env/actions/workflows/CI_test.yaml/badge.svg
+   :target: https://github.com/MeteoSwiss/anemoi-env/actions/workflows/CI_test.yaml
+   :alt: CI Test Status
+
+.. |CI Publish| image:: https://github.com/MeteoSwiss/anemoi-env/actions/workflows/CI_publish.yaml/badge.svg
+   :target: https://github.com/MeteoSwiss/anemoi-env/actions/workflows/CI_publish.yaml
+   :alt: CI Publish Status
+
 Provides a reproducible, versioned Python environment for Anemoi experiments.
 
 **anemoi-env** is a meta-package that defines a standardized set of dependencies for machine learning and data science workflows. It contains no source code—only dependency declarations that are automatically versioned and published weekly.
@@ -38,11 +52,11 @@ For development with the **latest Anemoi features from main branches** (no lock 
 Feature Testing (Fixed Commit SHAs)
 '''''''''''''''''''''''''''''''''''
 
-For testing specific features with reproducible Anemoi commits, create a feature branch from dev:
+For testing specific features with reproducible Anemoi commits, create a feature branch from **main** (not dev):
 
 .. code-block:: console
 
-    $ git checkout dev
+    $ git checkout main
     $ git checkout -b feature-test/new-graphs
 
 Then edit ``pyproject.toml`` to pin specific commits:
@@ -73,6 +87,28 @@ This repository uses a multi-branch strategy with different dependency sources:
 * **dev**: Contains ``pyproject.toml`` with **no lock file** and uses **bleeding-edge versions** from Anemoi package main branches (via git dependencies). Used for development against the latest Anemoi features. Not published to PyPI.
 
 * **feature-test/**: Custom feature branches with **fixed commit SHAs** for each Anemoi package. Includes ``poetry.lock`` for reproducible testing of specific feature combinations. Useful for validating new features before they reach PyPI. Not published.
+
+Continuous Integration
+----------------------
+
+The repository includes automated CI/CD workflows:
+
+* **CI Test** (``CI_test.yaml``): Runs on every push and pull request. Tests installation and verifies that all Anemoi packages can be imported successfully.
+
+* **CI Publish** (``CI_publish.yaml``): Runs every Monday at 3 AM UTC. Automatically:
+
+  1. Updates ``poetry.lock`` with latest compatible versions
+  2. Checks if any dependencies have changed
+  3. If changes detected:
+
+     * Updates version to current date (``YYYY.MM.DD``)
+     * Runs ``scripts/update_changelog.py`` to document Anemoi package versions
+     * Creates a git tag
+     * Publishes the new release to PyPI
+
+  4. If no changes, skips publishing
+
+This ensures weekly snapshots of the Anemoi ecosystem are automatically published when updates are available.
 
 Versioning
 ----------
@@ -146,5 +182,3 @@ Or in ``requirements.txt``:
     anemoi-env = { git = "https://github.com/MeteoSwiss/anemoi-env.git", rev = "feature-test/new-graphs" }
 
 This ensures your research uses a specific, reproducible set of dependencies—either from PyPI (stable) or from a pinned feature branch (testing).
-
-.. include:: CHANGELOG.rst
