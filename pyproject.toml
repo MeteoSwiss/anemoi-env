@@ -1,0 +1,75 @@
+[tool.poetry]
+name = "anemoi-env"
+version = "2025.10.10"
+description = "Provides a reproducible, versioned Python environment for Anemoi experiments."
+license = "BSD-3-Clause"
+authors = ["Hugues de Laroussilhe <hugues.delaroussilhe@meteoswiss.ch>"]
+readme = "README.rst"
+include = ["CHANGELOG.rst"]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.14"
+
+anemoi-datasets = "*"
+anemoi-graphs = "*"
+anemoi-inference = "*"
+anemoi-models = "*"
+anemoi-registry = "*"
+anemoi-training = "*"
+anemoi-utils = "*"
+eckitlib = "1.32.1.1"  # TODO: delete once stable wheels are availble
+
+# For dev branch, use these git dependencies instead:
+# anemoi-datasets = { git = "https://github.com/ecmwf/anemoi-datasets" }
+# anemoi-models = { git = "https://github.com/ecmwf/anemoi-core.git", subdirectory = "models" }
+# anemoi-training = { git = "https://github.com/ecmwf/anemoi-core.git", subdirectory = "training" }
+# anemoi-graphs = { git = "https://github.com/ecmwf/anemoi-core.git", subdirectory = "graphs" }
+# anemoi-inference = { git = "https://github.com/ecmwf/anemoi-inference" }
+# anemoi-utils = { git = "https://github.com/ecmwf/anemoi-utils.git" }
+# anemoi-registry = { git = "https://github.com/ecmwf/anemoi-registry.git" }
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.18.1"
+pydata-sphinx-theme = "^0.16.1"
+pylint = "^3.3.8"
+pytest = "^8.4.2"
+pytest-cov = "^7.0.0"
+sphinx = "^8.2.3"
+sphinx-autoapi = "^3.6.0"
+yapf = "^0.43.0"
+
+[tool.yapf]
+based_on_style = "pep8"
+column_limit = "120"
+
+[tool.pylint.master]
+disable = [
+    'C0114', # missing-module-docstring
+    'C0115', # missing-class-docstring
+    'C0116', # missing-function-docstring
+    'W0511', # fix me or to-do comments are already covered by SonarQube
+]
+
+[tool.pylint.basic]
+argument-naming-style = 'any'
+attr-naming-style = 'any'
+
+[tool.pylint.format]
+# Maximum number of lines in a module.
+max-line-length = 120
+
+[tool.pylint.design]
+# Minimum number of public methods for a class (see R0903).
+min-public-methods = 0
+
+[tool.mypy]
+ignore_missing_imports = true
+disallow_untyped_defs = true
+
+
+[tool.coverage.run]
+omit = ["test/**",  "doc/**"]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
