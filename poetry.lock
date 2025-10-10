@@ -4802,7 +4802,7 @@ version = "6.0.3"
 description = "YAML parser and emitter for Python"
 optional = false
 python-versions = ">=3.8"
-groups = ["main", "dev"]
+groups = ["main"]
 files = [
     {file = "PyYAML-6.0.3-cp38-cp38-macosx_10_13_x86_64.whl", hash = "sha256:c2514fceb77bc5e7a2f7adfaa1feb2fb311607c9cb518dbc378688ec73d8292f"},
     {file = "PyYAML-6.0.3-cp38-cp38-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:9c57bb8c96f6d1808c030b1687b9b5fb476abaa47f0db9c0101f5e9f394e97f4"},
@@ -5439,44 +5439,6 @@ sphinxcontrib-serializinghtml = ">=1.1.9"
 docs = ["sphinxcontrib-websupport"]
 lint = ["betterproto (==2.0.0b6)", "mypy (==1.15.0)", "pypi-attestations (==0.0.21)", "pyright (==1.1.395)", "pytest (>=8.0)", "ruff (==0.9.9)", "sphinx-lint (>=0.9)", "types-Pillow (==10.2.0.20240822)", "types-Pygments (==2.19.0.20250219)", "types-colorama (==0.4.15.20240311)", "types-defusedxml (==0.7.0.20240218)", "types-docutils (==0.21.0.20241128)", "types-requests (==2.32.0.20241016)", "types-urllib3 (==1.26.25.14)"]
 test = ["cython (>=3.0)", "defusedxml (>=0.7.1)", "pytest (>=8.0)", "pytest-xdist[psutil] (>=3.4)", "setuptools (>=70.0)", "typing_extensions (>=4.9)"]
-
-[[package]]
-name = "sphinx-autoapi"
-version = "3.6.0"
-description = "Sphinx API documentation generator"
-optional = false
-python-versions = ">=3.9"
-groups = ["dev"]
-markers = "python_version == \"3.12\""
-files = [
-    {file = "sphinx_autoapi-3.6.0-py3-none-any.whl", hash = "sha256:f3b66714493cab140b0e896d33ce7137654a16ac1edb6563edcbd47bf975f711"},
-    {file = "sphinx_autoapi-3.6.0.tar.gz", hash = "sha256:c685f274e41d0842ae7e199460c322c4bd7fec816ccc2da8d806094b4f64af06"},
-]
-
-[package.dependencies]
-astroid = {version = ">=3", markers = "python_version >= \"3.12\""}
-Jinja2 = "*"
-PyYAML = "*"
-sphinx = ">=7.4.0"
-
-[[package]]
-name = "sphinx-autoapi"
-version = "3.6.1"
-description = "Sphinx API documentation generator"
-optional = false
-python-versions = ">=3.9"
-groups = ["dev"]
-markers = "python_version == \"3.11\""
-files = [
-    {file = "sphinx_autoapi-3.6.1-py3-none-any.whl", hash = "sha256:6b7af0d5650f6eac1f4b85c1eb9f9a4911160ec7138bdc4451c77a5e94d5832c"},
-    {file = "sphinx_autoapi-3.6.1.tar.gz", hash = "sha256:1ff2992b7d5e39ccf92413098a376e0f91e7b4ca532c4f3e71298dbc8a4a9900"},
-]
-
-[package.dependencies]
-astroid = {version = ">=3.0,<4.0", markers = "python_version < \"3.12\""}
-Jinja2 = "*"
-PyYAML = "*"
-sphinx = ">=7.4.0"
 
 [[package]]
 name = "sphinxcontrib-applehelp"
@@ -6352,4 +6314,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.11,<3.13"
-content-hash = "3af757f191fc79a2cb4be02f4708d0f874f1c682417d9c62f25ce23aa18dfc1a"
+content-hash = "3aee36e53e097150722904ef38342d0b8fcedd6cfccb7bcbadcfc22eee94fcf2"
