@@ -26,6 +26,8 @@ jobs:
     steps:
     - name: Checkout current repository
       uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Configure Git
       run: |
@@ -44,8 +46,8 @@ jobs:
 
     - name: Generate lock file
       run: |
-        rm -f poetry.lock
-        poetry lock --no-update
+        # Update only Anemoi packages and their dependencies
+        poetry update anemoi-datasets anemoi-graphs anemoi-inference anemoi-models anemoi-registry anemoi-training anemoi-utils
         git add poetry.lock
 
     - name: Check for dependency changes
@@ -84,8 +86,7 @@ jobs:
       if: steps.check_changes.outputs.has_changes == 'true'
       run: |
         git tag "${{ env.RELEASE_VERSION }}"
-        git push origin main
-        git push origin "${{ env.RELEASE_VERSION }}"
+        git push origin main --follow-tags
 
     - name: Publish to TestPyPi
       if: steps.check_changes.outputs.has_changes == 'true'
@@ -118,5 +119,5 @@ jobs:
     - name: No changes detected
       if: steps.check_changes.outputs.has_changes == 'false'
       run: |
-        echo "ℹ️ No dependency changes detected. Skipping release."
+        echo "No dependency changes detected. Skipping release."
         echo "All Anemoi packages are already at their latest versions."
