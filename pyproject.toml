@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "anemoi-env"
-version = "2025.10.10"
+version = "42.dev"
 description = "Provides a reproducible, versioned Python environment for Anemoi experiments."
 license = "BSD-3-Clause"
 authors = ["Hugues de Laroussilhe <hugues.delaroussilhe@meteoswiss.ch>"]
@@ -8,25 +8,16 @@ readme = "README.rst"
 include = ["CHANGELOG.rst"]
 
 [tool.poetry.dependencies]
-python = ">=3.11,<3.14"
+python = ">=3.10,<3.13"
 
-anemoi-datasets = "*"
-anemoi-graphs = "*"
-anemoi-inference = "*"
-anemoi-models = "*"
-anemoi-registry = "*"
-anemoi-training = "*"
-anemoi-utils = "*"
+anemoi-datasets = { git = "https://github.com/ecmwf/anemoi-datasets", rev = "main" }
+anemoi-models = { git = "https://github.com/ecmwf/anemoi-core.git", subdirectory = "models" , rev = "main" }
+anemoi-training = { git = "https://github.com/ecmwf/anemoi-core.git", subdirectory = "training" , rev = "main" }
+anemoi-graphs = { git = "https://github.com/ecmwf/anemoi-core.git", subdirectory = "graphs" , rev = "main" }
+anemoi-inference = { git = "https://github.com/ecmwf/anemoi-inference" , rev = "main" }
+anemoi-utils = { git = "https://github.com/ecmwf/anemoi-utils.git" , rev = "main" }
+anemoi-registry = { git = "https://github.com/ecmwf/anemoi-registry.git" , rev = "main" }
 eckitlib = "1.32.1.1"  # TODO: delete once stable wheels are availble
-
-# For dev branch, use these git dependencies instead:
-# anemoi-datasets = { git = "https://github.com/ecmwf/anemoi-datasets" }
-# anemoi-models = { git = "https://github.com/ecmwf/anemoi-core.git", subdirectory = "models" }
-# anemoi-training = { git = "https://github.com/ecmwf/anemoi-core.git", subdirectory = "training" }
-# anemoi-graphs = { git = "https://github.com/ecmwf/anemoi-core.git", subdirectory = "graphs" }
-# anemoi-inference = { git = "https://github.com/ecmwf/anemoi-inference" }
-# anemoi-utils = { git = "https://github.com/ecmwf/anemoi-utils.git" }
-# anemoi-registry = { git = "https://github.com/ecmwf/anemoi-registry.git" }
 
 [tool.poetry.group.dev.dependencies]
 mypy = "^1.18.1"
@@ -34,8 +25,6 @@ pydata-sphinx-theme = "^0.16.1"
 pylint = "^3.3.8"
 pytest = "^8.4.2"
 pytest-cov = "^7.0.0"
-sphinx = "^8.2.3"
-sphinx-autoapi = "^3.6.0"
 yapf = "^0.43.0"
 
 [tool.yapf]
