@@ -25,6 +25,7 @@ pydata-sphinx-theme = "^0.16.1"
 pylint = "^3.3.8"
 pytest = "^8.4.2"
 pytest-cov = "^7.0.0"
+sphinx = "^8.2.3"
 yapf = "^0.43.0"
 
 [tool.yapf]
