@@ -44,22 +44,10 @@ jobs:
       run: |
         # Update only Anemoi packages and their dependencies
         poetry update anemoi-datasets anemoi-graphs anemoi-inference anemoi-models anemoi-registry anemoi-training anemoi-utils
+        poetry install
         git add poetry.lock
 
-    - name: Check for dependency changes
-      id: check_changes
-      run: |
-        # Check if poetry.lock has any changes
-        if git diff --cached --quiet poetry.lock; then
-          echo "No dependency changes detected"
-          echo "has_changes=false" >> $GITHUB_OUTPUT
-        else
-          echo "Dependency changes detected"
-          echo "has_changes=true" >> $GITHUB_OUTPUT
-        fi
-
     - name: Update version to current date
-      if: steps.check_changes.outputs.has_changes == 'true'
       run: |
         VERSION=$(date -u +%Y.%-m)
         echo "New version: $VERSION"
@@ -67,25 +55,22 @@ jobs:
         echo "RELEASE_VERSION=$VERSION" >> $GITHUB_ENV
 
     - name: Update changelog with package versions
-      if: steps.check_changes.outputs.has_changes == 'true'
       run: |
         python scripts/update_changelog.py
         git add CHANGELOG.rst
 
     - name: Commit changes
-      if: steps.check_changes.outputs.has_changes == 'true'
       run: |
         git add pyproject.toml poetry.lock CHANGELOG.rst
         git commit -m "monthly release ${{ env.RELEASE_VERSION }}" || echo "No changes to commit"
 
     - name: Create and push tag
-      if: steps.check_changes.outputs.has_changes == 'true'
       run: |
-        git tag "${{ env.RELEASE_VERSION }}"
-        git push origin main --follow-tags
+        git tag -a "${{ env.RELEASE_VERSION }}" -m "Release ${{ env.RELEASE_VERSION }}"
+        git push origin main
+        git push origin "${{ env.RELEASE_VERSION }}"
 
     - name: Publish to TestPyPi
-      if: steps.check_changes.outputs.has_changes == 'true'
       run: |
         poetry config repositories.testpypi https://test.pypi.org/legacy/
         poetry config pypi-token.testpypi ${{ secrets.TESTPYPI_API_TOKEN }}
@@ -93,14 +78,13 @@ jobs:
         rm -rf dist/
 
     - name: Publish to PyPi
-      if: steps.check_changes.outputs.has_changes == 'true'
       run: |
         poetry config pypi-token.pypi ${{ secrets.PYPI_API_TOKEN }}
         poetry publish --build
 
-    - name: Build documentation
-      if: steps.check_changes.outputs.has_changes == 'true'
-      run: poetry run sphinx-build doc doc/_build
+    # - name: Build documentation
+    #   if: steps.check_changes.outputs.has_changes == 'true'
+    #   run: poetry run sphinx-build doc doc/_build
 
     # - name: Publish documentation
     #   if: steps.check_changes.outputs.has_changes == 'true'
@@ -111,9 +95,3 @@ jobs:
     #     github_token: ${{ secrets.GITHUB_TOKEN }}
     #     publish_dir: doc/_build/
     #     force_orphan: true
-
-    - name: No changes detected
-      if: steps.check_changes.outputs.has_changes == 'false'
-      run: |
-        echo "No dependency changes detected. Skipping release."
-        echo "All Anemoi packages are already at their latest versions."
