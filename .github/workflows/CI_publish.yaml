@@ -1,6 +1,6 @@
-# This workflow automatically creates weekly releases
+# This workflow automatically creates monthly releases
 # It locks dependencies, updates the version to the current date,
-# and publishes to PyPI with calendar versioning (YYYY.MM.DD)
+# and publishes to PyPI with calendar versioning (YYYY.MM)
 #
 # Copyright (c) 2025 MeteoSwiss, created by Hugues de Laroussilhe; hugues.delaroussilhe@meteoswiss.ch
 
@@ -8,8 +8,8 @@ name: CI_publish
 
 on:
   schedule:
-    # Run every Monday at 3:00 AM UTC
-    - cron: '0 3 * * 1'
+    # At 03:00 on day-of-month 1.
+    - cron: '0 3 1 * *'
   workflow_dispatch:  # Allow manual triggering
 
 jobs:
@@ -65,7 +65,7 @@ jobs:
     - name: Update version to current date
       if: steps.check_changes.outputs.has_changes == 'true'
       run: |
-        VERSION=$(date -u +%Y.%-m.%-d)
+        VERSION=$(date -u +%Y.%-m)
         echo "New version: $VERSION"
         sed -i "s/^version = .*/version = \"$VERSION\"/" pyproject.toml
         echo "RELEASE_VERSION=$VERSION" >> $GITHUB_ENV
@@ -80,7 +80,7 @@ jobs:
       if: steps.check_changes.outputs.has_changes == 'true'
       run: |
         git add pyproject.toml poetry.lock CHANGELOG.rst
-        git commit -m "chore: weekly release ${{ env.RELEASE_VERSION }}" || echo "No changes to commit"
+        git commit -m "monthly release ${{ env.RELEASE_VERSION }}" || echo "No changes to commit"
 
     - name: Create and push tag
       if: steps.check_changes.outputs.has_changes == 'true'

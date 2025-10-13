@@ -18,7 +18,7 @@ Anemoi Environments
 
 Provides a reproducible, versioned Python environment for Anemoi experiments.
 
-**anemoi-env** is a meta-package that defines a standardized set of dependencies for machine learning and data science workflows. It contains no source code—only dependency declarations that are automatically versioned and published weekly.
+**anemoi-env** is a meta-package that defines a standardized set of dependencies for machine learning and data science workflows. It contains no source code—only dependency declarations that are automatically versioned and published monthly.
 
 Installation
 ------------
@@ -30,7 +30,7 @@ For reproducible environments, install a specific calendar-versioned release fro
 
 .. code-block:: console
 
-    $ pip install anemoi-env==2025.10.10
+    $ pip install anemoi-env==2025.10
 
 Or install the latest locked version from the main branch:
 
@@ -82,7 +82,7 @@ Branching Strategy
 
 This repository uses a multi-branch strategy with different dependency sources:
 
-* **main**: Contains ``poetry.lock`` and uses **stable PyPI releases** of all dependencies. Updated automatically every Monday via CI. Each update creates a calendar-versioned release (e.g., ``2025.10.10``) and publishes to PyPI. Use this for reproducible, production-ready environments.
+* **main**: Contains ``poetry.lock`` and uses **stable PyPI releases** of all dependencies. Updated automatically every Monday via CI. Each update creates a calendar-versioned release (e.g., ``2025.10``) and publishes to PyPI. Use this for reproducible, production-ready environments.
 
 * **dev**: Contains ``pyproject.toml`` with **no lock file** and uses **bleeding-edge versions** from Anemoi package main branches (via git dependencies). Used for development against the latest Anemoi features. Not published to PyPI.
 
@@ -108,14 +108,14 @@ The repository includes automated CI/CD workflows:
 
   4. If no changes, skips publishing
 
-This ensures weekly snapshots of the Anemoi ecosystem are automatically published when updates are available.
+This ensures monthly snapshots of the Anemoi ecosystem are automatically published when updates are available.
 
 Versioning
 ----------
 
-Uses **Calendar Versioning (CalVer)**: ``YYYY.MM.DD``
+Uses **Calendar Versioning (CalVer)**: ``YYYY.MM``
 
-Each weekly release represents a snapshot of the dependency tree at that point in time.
+Each monthly release represents a snapshot of the dependency tree at that point in time.
 
 What's Included
 ---------------
@@ -166,13 +166,13 @@ Always specify the exact version in your project dependencies:
 .. code-block:: toml
 
     [tool.poetry.dependencies]
-    anemoi-env = "2025.10.10"
+    anemoi-env = "2025.10"
 
 Or in ``requirements.txt``:
 
 .. code-block:: text
 
-    anemoi-env==2025.10.10
+    anemoi-env==2025.10
 
 **For testing specific feature combinations:**
 
