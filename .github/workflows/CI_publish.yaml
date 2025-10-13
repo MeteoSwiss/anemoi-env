@@ -105,15 +105,15 @@ jobs:
       if: steps.check_changes.outputs.has_changes == 'true'
       run: poetry run sphinx-build doc doc/_build
 
-    - name: Publish documentation
-      if: steps.check_changes.outputs.has_changes == 'true'
-      uses: peaceiris/actions-gh-pages@v3
+    # - name: Publish documentation
+    #   if: steps.check_changes.outputs.has_changes == 'true'
+    #   uses: peaceiris/actions-gh-pages@v3
 
-      with:
-        publish_branch: gh-pages
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: doc/_build/
-        force_orphan: true
+    #   with:
+    #     publish_branch: gh-pages
+    #     github_token: ${{ secrets.GITHUB_TOKEN }}
+    #     publish_dir: doc/_build/
+    #     force_orphan: true
 
     - name: No changes detected
       if: steps.check_changes.outputs.has_changes == 'false'
