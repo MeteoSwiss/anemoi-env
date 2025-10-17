@@ -1,5 +1,7 @@
 # This workflow automatically creates monthly releases
 # It locks dependencies, updates the version to the current date,
+# and publishes to PyPI with calendar versioning (YYYY.MM.patch)his workflow automatically creates monthly releases
+# It locks dependencies, updates the version to the current date,
 # and publishes to PyPI with calendar versioning (YYYY.MM)
 #
 # Copyright (c) 2025 MeteoSwiss, created by Hugues de Laroussilhe; hugues.delaroussilhe@meteoswiss.ch
@@ -40,19 +42,30 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install poetry
 
+    - name: Update version to current date
+      run: |
+        YEAR_MONTH=$(date -u +%Y.%-m)
+        git fetch --tags
+
+        # Find the highest patch version for this month
+        LATEST_PATCH=$(git tag -l "${YEAR_MONTH}.*" | sed "s/${YEAR_MONTH}\.//" | sort -n | tail -1)
+        if [ -z "$LATEST_PATCH" ]; then
+          PATCH=0
+        else
+          PATCH=$((LATEST_PATCH + 1))
+        fi
+
+        VERSION="${YEAR_MONTH}.${PATCH}"
+        echo "New version: $VERSION"
+        sed -i "s/^version = .*/version = \"$VERSION\"/" pyproject.toml
+        echo "RELEASE_VERSION=$VERSION" >> $GITHUB_ENV
+
     - name: Generate lock file
       run: |
         # Update only Anemoi packages and their dependencies
         poetry update anemoi-datasets anemoi-graphs anemoi-inference anemoi-models anemoi-registry anemoi-training anemoi-utils
         poetry install
         git add poetry.lock
-
-    - name: Update version to current date
-      run: |
-        VERSION=$(date -u +%Y.%-m)
-        echo "New version: $VERSION"
-        sed -i "s/^version = .*/version = \"$VERSION\"/" pyproject.toml
-        echo "RELEASE_VERSION=$VERSION" >> $GITHUB_ENV
 
     - name: Update changelog with package versions
       run: |
@@ -82,16 +95,14 @@ jobs:
         poetry config pypi-token.pypi ${{ secrets.PYPI_API_TOKEN }}
         poetry publish --build
 
-    # - name: Build documentation
-    #   if: steps.check_changes.outputs.has_changes == 'true'
-    #   run: poetry run sphinx-build doc doc/_build
+    - name: Build documentation
+      run: poetry run sphinx-build doc doc/_build
 
-    # - name: Publish documentation
-    #   if: steps.check_changes.outputs.has_changes == 'true'
-    #   uses: peaceiris/actions-gh-pages@v3
+    - name: Publish documentation
+      uses: peaceiris/actions-gh-pages@v3
 
-    #   with:
-    #     publish_branch: gh-pages
-    #     github_token: ${{ secrets.GITHUB_TOKEN }}
-    #     publish_dir: doc/_build/
-    #     force_orphan: true
+      with:
+        publish_branch: gh-pages
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: doc/_build/
+        force_orphan: true
