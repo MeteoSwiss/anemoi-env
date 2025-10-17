@@ -16,6 +16,8 @@ Anemoi Environments
    :target: https://github.com/MeteoSwiss/anemoi-env/actions/workflows/CI_publish.yaml
    :alt: CI Publish Status
 
+.. |release_version| replace:: 2025.10.0
+
 Provides a reproducible, versioned Python environment for Anemoi experiments.
 
 **anemoi-env** is a meta-package that defines a standardized set of dependencies for machine learning and data science workflows. It contains no source code—only dependency declarations that are automatically versioned and published monthly.
@@ -28,9 +30,9 @@ Stable Release (Locked Dependencies)
 
 For reproducible environments, install a specific calendar-versioned release from PyPI:
 
-.. code-block:: console
+.. parsed-literal::
 
-    $ pip install anemoi-env==2025.10
+    $ pip install anemoi-env==\ |release_version|
 
 Or install the latest locked version from the main branch:
 
@@ -85,19 +87,19 @@ CUDA-Specific PyTorch Versions
 
 By default, ``anemoi-env`` installs PyTorch with CPU support or CUDA support based on what's available in the default PyPI index. To install a **specific CUDA version** (e.g., CUDA 12.1), use PyTorch's extra index URL:
 
-.. code-block:: console
+.. parsed-literal::
 
-    $ pip install anemoi-env==2025.10.0 --extra-index-url https://download.pytorch.org/whl/cu121
-    $ pip install anemoi-env==2025.10.0 --extra-index-url https://download.pytorch.org/whl/cpu
+    $ pip install anemoi-env==\ |release_version| --extra-index-url https://download.pytorch.org/whl/cu121
+    $ pip install anemoi-env==\ |release_version| --extra-index-url https://download.pytorch.org/whl/cpu
 
 Installing Anemoi Package Extras
 ''''''''''''''''''''''''''''''''
 
 Some Anemoi packages provide optional features via extras (e.g., ``anemoi-graphs[tri]`` for trimesh support). To use these extras while respecting the tested dependency versions from ``anemoi-env``:
 
-.. code-block:: console
+.. parsed-literal::
 
-    $ pip install anemoi-env==2025.10.0
+    $ pip install anemoi-env==\ |release_version|
     $ pip install "anemoi-graphs[tri]"
 
 **Why install in two steps?**
@@ -189,16 +191,18 @@ Always specify the exact version in your project dependencies:
 
 **For stable PyPI releases:**
 
-.. code-block:: toml
+In ``pyproject.toml``:
+
+.. parsed-literal::
 
     [tool.poetry.dependencies]
-    anemoi-env = "2025.10.0"
+    anemoi-env = "|release_version|"
 
 Or in ``requirements.txt``:
 
-.. code-block:: text
+.. parsed-literal::
 
-    anemoi-env==2025.10
+    anemoi-env==\ |release_version|
 
 **For testing specific feature combinations:**
 

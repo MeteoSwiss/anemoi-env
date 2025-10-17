@@ -58,6 +58,7 @@ jobs:
         VERSION="${YEAR_MONTH}.${PATCH}"
         echo "New version: $VERSION"
         sed -i "s/^version = .*/version = \"$VERSION\"/" pyproject.toml
+        sed -i "s/^.. |release_version| replace:: .*/.. |release_version| replace:: $VERSION/" README.rst
         echo "RELEASE_VERSION=$VERSION" >> $GITHUB_ENV
 
     - name: Generate lock file
@@ -72,7 +73,7 @@ jobs:
 
     - name: Commit changes
       run: |
-        git add pyproject.toml poetry.lock CHANGELOG.rst
+        git add pyproject.toml poetry.lock CHANGELOG.rst README.rst
         git commit -m "monthly release ${{ env.RELEASE_VERSION }}" || echo "No changes to commit"
 
     - name: Create and push tag
