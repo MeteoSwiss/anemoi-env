@@ -17,7 +17,6 @@ anemoi-models = "*"
 anemoi-registry = "*"
 anemoi-training = "*"
 anemoi-utils = "*"
-eckitlib = "1.32.1.1"  # TODO: delete once stable wheels are availble
 
 # For dev branch, use these git dependencies instead:
 # anemoi-datasets = { git = "https://github.com/ecmwf/anemoi-datasets" }
