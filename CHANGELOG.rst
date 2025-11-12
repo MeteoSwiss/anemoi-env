@@ -2,6 +2,21 @@
 Changelog
 =========
 
+Version 2025.11.1 (2025-11-12)
+==============================
+
+Anemoi Package Versions
+------------------------
+
+* **anemoi-datasets**: ``0.5.28``
+* **anemoi-graphs**: ``0.7.1``
+* **anemoi-inference**: ``0.8.1``
+* **anemoi-models**: ``0.9.7``
+* **anemoi-registry**: ``0.2.2``
+* **anemoi-training**: ``0.6.7``
+* **anemoi-transform**: ``0.1.19``
+* **anemoi-utils**: ``0.4.38``
+
 Version 2025.11.0 (2025-11-01)
 ==============================
 
