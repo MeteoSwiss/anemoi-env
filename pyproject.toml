@@ -10,22 +10,13 @@ include = ["CHANGELOG.rst"]
 [tool.poetry.dependencies]
 python = ">=3.11,<3.13"
 
-anemoi-datasets = "*"
+anemoi-datasets = { git = "https://github.com/ecmwf/anemoi-datasets.git", branch = "main"}
 anemoi-graphs = "*"
 anemoi-inference = "*"
-anemoi-models = "*"
+anemoi-models = { git = "https://github.com/ecmwf/anemoi-core.git", subdirectory = "models", branch = "fix/assert-point-wise"}
 anemoi-registry = "*"
-anemoi-training = "*"
+anemoi-training = { git = "https://github.com/ecmwf/anemoi-core.git", subdirectory = "training", rev = "a0621e15ffd9b21c8d9764c365717d77ce345b8c" }
 anemoi-utils = "*"
-
-# For dev branch, use these git dependencies instead:
-# anemoi-datasets = { git = "https://github.com/ecmwf/anemoi-datasets" }
-# anemoi-models = { git = "https://github.com/ecmwf/anemoi-core.git", subdirectory = "models" }
-# anemoi-training = { git = "https://github.com/ecmwf/anemoi-core.git", subdirectory = "training" }
-# anemoi-graphs = { git = "https://github.com/ecmwf/anemoi-core.git", subdirectory = "graphs" }
-# anemoi-inference = { git = "https://github.com/ecmwf/anemoi-inference" }
-# anemoi-utils = { git = "https://github.com/ecmwf/anemoi-utils.git" }
-# anemoi-registry = { git = "https://github.com/ecmwf/anemoi-registry.git" }
 
 [tool.poetry.group.dev.dependencies]
 mypy = "^1.18.1"

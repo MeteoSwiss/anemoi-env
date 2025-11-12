@@ -203,15 +203,13 @@ files = [
 
 [[package]]
 name = "anemoi-datasets"
-version = "0.5.28"
+version = "0.5.29.dev5+ge00360526"
 description = "A package to hold various functions to support training of ML models on ECMWF data."
 optional = false
 python-versions = ">=3.10"
 groups = ["main"]
-files = [
-    {file = "anemoi_datasets-0.5.28-py3-none-any.whl", hash = "sha256:5cf4a9392cfe2eb79d4bbb5812706d854e21216bc1ec818d2b4f3737331b762c"},
-    {file = "anemoi_datasets-0.5.28.tar.gz", hash = "sha256:c5651b5de4a011d937b24c4a9762fc99ad38675d9d39d6ed92d1a47ff3ad888d"},
-]
+files = []
+develop = false
 
 [package.dependencies]
 anemoi-transform = ">=0.1.10"
@@ -236,6 +234,12 @@ docs = ["anemoi-datasets[all]", "nbsphinx", "pandoc", "sphinx", "sphinx-argparse
 remote = ["boto3", "requests"]
 tests = ["anemoi-datasets[xarray]", "pytest", "pytest-skip-slow", "pytest-xdist"]
 xarray = ["adlfs", "gcsfs", "kerchunk", "pandas", "planetary-computer", "pystac-client", "s3fs"]
+
+[package.source]
+type = "git"
+url = "https://github.com/ecmwf/anemoi-datasets.git"
+reference = "main"
+resolved_reference = "e00360526aa2cbf1190268417c721603fba697a6"
 
 [[package]]
 name = "anemoi-graphs"
@@ -314,15 +318,13 @@ zarr = ["zarr"]
 
 [[package]]
 name = "anemoi-models"
-version = "0.9.7"
+version = "0.9.7.post23"
 description = "A package to hold various functions to support training of ML models."
 optional = false
 python-versions = ">=3.10"
 groups = ["main"]
-files = [
-    {file = "anemoi_models-0.9.7-py3-none-any.whl", hash = "sha256:ee126df0b7aff5d5a6530701b853fc4f6e9419f8ddf0ce0125974dfe2aadc6a7"},
-    {file = "anemoi_models-0.9.7.tar.gz", hash = "sha256:3f5b1a77f638e7d193f75c9bf67ee97a9cb72efea74c47ccb88a45a9f8d56e89"},
-]
+files = []
+develop = false
 
 [package.dependencies]
 anemoi-utils = ">=0.1.9"
@@ -340,6 +342,13 @@ dev = ["anemoi-models[all,docs,tests]", "pre-commit (>=3.3.3)"]
 docs = ["nbsphinx", "pandoc", "rstfmt", "sphinx (<8.2)", "sphinx-argparse (<0.5)", "sphinx-rtd-theme"]
 migrations = ["cloudpickle (>=3.1)", "jinja2 (>=3.1)", "rich"]
 tests = ["hypothesis (>=6.11)", "pytest (>=8)"]
+
+[package.source]
+type = "git"
+url = "https://github.com/ecmwf/anemoi-core.git"
+reference = "fix/assert-point-wise"
+resolved_reference = "02b6f655154c5e8187a4e1a7a099854f4b3d25f4"
+subdirectory = "models"
 
 [[package]]
 name = "anemoi-registry"
@@ -368,15 +377,13 @@ tests = ["pytest"]
 
 [[package]]
 name = "anemoi-training"
-version = "0.6.7"
+version = "0.6.7.post18"
 description = "A package to hold various functions to support training of ML models."
 optional = false
 python-versions = "<3.13,>=3.10"
 groups = ["main"]
-files = [
-    {file = "anemoi_training-0.6.7-py3-none-any.whl", hash = "sha256:dba932c065215ee7c7ba97ba1e62512903ad2379c76aff098cf0fca880f0ea93"},
-    {file = "anemoi_training-0.6.7.tar.gz", hash = "sha256:204b8f1871aa0da89f7a15c1bc36da9f2623e93309bff79e0b37c30d9705760a"},
-]
+files = []
+develop = false
 
 [package.dependencies]
 anemoi-datasets = ">=0.5.13"
@@ -403,11 +410,19 @@ tqdm = ">=4.65"
 zarr = ">=2.14.2"
 
 [package.extras]
+azure = ["azure-ai-ml", "azure-identity", "azureml-mlflow", "strenum"]
 dev = ["anemoi-training[all,docs,tests]", "pre-commit (>=3.3.3)"]
 docs = ["autodoc-pydantic", "nbsphinx", "pandoc", "sphinx (<8.2)", "sphinx-argparse", "sphinx-rtd-theme"]
 plotting = ["distinctipy (>=1)"]
 profile = ["holistictraceanalysis (>=0.2)", "pandas (>=1.3.2)", "rich (>=13.6)", "tabulate (>=0.9)"]
-tests = ["anemoi-graphs[tri]", "hypothesis (>=6.11)", "pytest (>=8)", "pytest-mock (>=3)", "pytest-skip-slow (>=0.0.5)", "sshfs"]
+tests = ["anemoi-graphs[tri]", "anemoi-training[azure]", "hypothesis (>=6.11)", "pytest (>=8)", "pytest-mock (>=3)", "pytest-skip-slow (>=0.0.5)", "sshfs"]
+
+[package.source]
+type = "git"
+url = "https://github.com/ecmwf/anemoi-core.git"
+reference = "a0621e15ffd9b21c8d9764c365717d77ce345b8c"
+resolved_reference = "a0621e15ffd9b21c8d9764c365717d77ce345b8c"
+subdirectory = "training"
 
 [[package]]
 name = "anemoi-transform"
@@ -753,14 +768,14 @@ files = [
 
 [[package]]
 name = "certifi"
-version = "2025.10.5"
+version = "2025.11.12"
 description = "Python package for providing Mozilla's CA Bundle."
 optional = false
 python-versions = ">=3.7"
 groups = ["main", "dev"]
 files = [
-    {file = "certifi-2025.10.5-py3-none-any.whl", hash = "sha256:0f212c2744a9bb6de0c56639a6f68afe01ecd92d91f14ae897c4fe7bbeeef0de"},
-    {file = "certifi-2025.10.5.tar.gz", hash = "sha256:47c09d31ccf2acf0be3f701ea53595ee7e0b8fa08801c6624be771df09ae7b43"},
+    {file = "certifi-2025.11.12-py3-none-any.whl", hash = "sha256:97de8790030bbd5c2d96b7ec782fc2f7820ef8dba6db909ccf95449f2d062d4b"},
+    {file = "certifi-2025.11.12.tar.gz", hash = "sha256:d8ab5478f2ecd78af242878415affce761ca6bc54a22a27e026d7c25357c3316"},
 ]
 
 [[package]]
@@ -6743,4 +6758,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.11,<3.13"
-content-hash = "c4da3cdfdc4e7078d34f637772111bcba9d1e6e48f8e12d48271f795c09bda6d"
+content-hash = "2a7afd8cf2378c8abc1d4dad6290dafd41f5c4c78d240423dbfd9572a919d1f9"
