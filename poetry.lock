@@ -239,14 +239,14 @@ xarray = ["adlfs", "gcsfs", "kerchunk", "pandas", "planetary-computer", "pystac-
 
 [[package]]
 name = "anemoi-graphs"
-version = "0.7.2"
+version = "0.8.1"
 description = "A package to build graphs for data-driven forecasts."
 optional = false
 python-versions = ">=3.10"
 groups = ["main"]
 files = [
-    {file = "anemoi_graphs-0.7.2-py3-none-any.whl", hash = "sha256:284c87194723ce8ae85d8f5dd315b69799830923af8f048e8ea40133789eec19"},
-    {file = "anemoi_graphs-0.7.2.tar.gz", hash = "sha256:2e7776333ceb650322a21d0bac2b19654422ac3e533fe0df0cd6c0d4dba646ab"},
+    {file = "anemoi_graphs-0.8.1-py3-none-any.whl", hash = "sha256:98c2f2f2233b2596ecadbd986ff7f508dfc868de01712fd0e1ad9e31fc754d09"},
+    {file = "anemoi_graphs-0.8.1.tar.gz", hash = "sha256:80e91d46d859849f307c1b805afea9824ca4034962a7e0b7cae2475dbc0e56a8"},
 ]
 
 [package.dependencies]
@@ -266,7 +266,7 @@ typeguard = ">=4"
 all = ["anemoi-graphs[anemoi,healpix,hex,tri]"]
 anemoi = ["anemoi-datasets (>=0.5.21)"]
 dev = ["anemoi-graphs[docs,tests]"]
-docs = ["nbsphinx", "pandoc", "requests", "sphinx (<8.2)", "sphinx-argparse", "sphinx-rtd-theme", "termcolor", "tomli"]
+docs = ["nbsphinx", "pandoc", "requests", "sphinx (<8.2) ; python_version < \"3.11\"", "sphinx (>=8.2) ; python_version >= \"3.11\"", "sphinx-argparse", "sphinx-rtd-theme", "termcolor", "tomli"]
 healpix = ["healpy (>=1.17)"]
 hex = ["h3 (>=3.7.7,<4)"]
 tests = ["hypothesis (>=6.11)", "pytest (>=8)", "pytest-mock (>=3)"]
@@ -275,14 +275,14 @@ xarray = ["xarray", "zarr (<3)"]
 
 [[package]]
 name = "anemoi-inference"
-version = "0.8.2"
+version = "0.8.3"
 description = "A package to run inference from data-driven forecasts weather models."
 optional = false
 python-versions = ">=3.10"
 groups = ["main"]
 files = [
-    {file = "anemoi_inference-0.8.2-py3-none-any.whl", hash = "sha256:0820fb28201fdf5ba37d3f38448fe3d1b5bd29aa218efc480b07328559f571d9"},
-    {file = "anemoi_inference-0.8.2.tar.gz", hash = "sha256:0032703c62b092bb09994870ea87c9351d145d9eabddd8e8685ff33ef5b69106"},
+    {file = "anemoi_inference-0.8.3-py3-none-any.whl", hash = "sha256:dd2744318c15ffb10870387f7723a842a32316d9f027bf3144c010e7726f75d0"},
+    {file = "anemoi_inference-0.8.3.tar.gz", hash = "sha256:2cca60774f088ac2d0cb4aff0dda904757b5bdc78fc9ce4c07ef5fdbdf6cf609"},
 ]
 
 [package.dependencies]
@@ -315,14 +315,14 @@ zarr = ["zarr"]
 
 [[package]]
 name = "anemoi-models"
-version = "0.10.0"
+version = "0.11.2"
 description = "A package to hold various functions to support training of ML models."
 optional = false
 python-versions = ">=3.10"
 groups = ["main"]
 files = [
-    {file = "anemoi_models-0.10.0-py3-none-any.whl", hash = "sha256:33b6b176eed00e9a9ef0691077ec3358d80b0775b3d3080dd788dc2e0b3c82de"},
-    {file = "anemoi_models-0.10.0.tar.gz", hash = "sha256:9aef64f683160f607625b6502af4ba81802b62f2e999dca1b2393eb3427344dc"},
+    {file = "anemoi_models-0.11.2-py3-none-any.whl", hash = "sha256:a677d4880f5fef3169bc99573c5ffc6870378370cad5f73498fe8174135e0aaf"},
+    {file = "anemoi_models-0.11.2.tar.gz", hash = "sha256:2b76273321147103f13b1272dbc3ee0a63961a2d32eb8b1f318bc24ebabd9d32"},
 ]
 
 [package.dependencies]
@@ -338,7 +338,7 @@ torch-geometric = ">=2.3"
 [package.extras]
 all = ["anemoi-models[migrations]"]
 dev = ["anemoi-models[all,docs,tests]", "pre-commit (>=3.3.3)"]
-docs = ["nbsphinx", "pandoc", "rstfmt", "sphinx (<8.2)", "sphinx-argparse (<0.5)", "sphinx-rtd-theme"]
+docs = ["nbsphinx", "pandoc", "rstfmt", "sphinx (<8.2) ; python_version < \"3.11\"", "sphinx (>=8.2) ; python_version >= \"3.11\"", "sphinx-argparse (<0.5)", "sphinx-rtd-theme"]
 migrations = ["cloudpickle (>=3.1)", "jinja2 (>=3.1)", "rich"]
 tests = ["hypothesis (>=6.11)", "pytest (>=8)"]
 
@@ -369,14 +369,14 @@ tests = ["pytest"]
 
 [[package]]
 name = "anemoi-training"
-version = "0.7.0"
+version = "0.8.1"
 description = "A package to hold various functions to support training of ML models."
 optional = false
 python-versions = "<3.13,>=3.10"
 groups = ["main"]
 files = [
-    {file = "anemoi_training-0.7.0-py3-none-any.whl", hash = "sha256:6a9748457d6cdc555fa3561d9520b05ead75fed98ea41bc5b2b9a659f4d34f78"},
-    {file = "anemoi_training-0.7.0.tar.gz", hash = "sha256:c11e4f5c3eb2001d442a38d1888c58b5f16f42e68f3666873ab4c5d792266d8c"},
+    {file = "anemoi_training-0.8.1-py3-none-any.whl", hash = "sha256:6a6e26198424aa482f147000892d49d938b3a654833d5522df1f7eb277c61e16"},
+    {file = "anemoi_training-0.8.1.tar.gz", hash = "sha256:2b678491daddb98085096b2271579ff8a3fd5d49250d37289cf70165f67c3837"},
 ]
 
 [package.dependencies]
@@ -406,7 +406,7 @@ zarr = ">=2.14.2"
 [package.extras]
 azure = ["azure-ai-ml", "azure-identity", "azureml-mlflow", "strenum"]
 dev = ["anemoi-training[all,docs,tests]", "pre-commit (>=3.3.3)"]
-docs = ["autodoc-pydantic", "nbsphinx", "pandoc", "sphinx (<8.2)", "sphinx-argparse", "sphinx-rtd-theme"]
+docs = ["autodoc-pydantic", "nbsphinx", "pandoc", "sphinx (<8.2) ; python_version < \"3.11\"", "sphinx (>=8.2) ; python_version >= \"3.11\"", "sphinx-argparse", "sphinx-rtd-theme"]
 plotting = ["distinctipy (>=1)"]
 profile = ["holistictraceanalysis (>=0.2)", "pandas (>=1.3.2)", "rich (>=13.6)", "tabulate (>=0.9)"]
 tests = ["anemoi-graphs[tri]", "anemoi-training[azure]", "hypothesis (>=6.11)", "pytest (>=8)", "pytest-mock (>=3)", "pytest-skip-slow (>=0.0.5)", "sshfs"]
@@ -438,14 +438,14 @@ tests = ["pytest"]
 
 [[package]]
 name = "anemoi-utils"
-version = "0.4.39"
+version = "0.4.40"
 description = "A package to hold various functions to support training of ML models on ECMWF data."
 optional = false
 python-versions = ">=3.10"
 groups = ["main"]
 files = [
-    {file = "anemoi_utils-0.4.39-py3-none-any.whl", hash = "sha256:514a2253e39c1a0dbc5021bc3276efa706bcba746fdaafa38ed1dbab7518e354"},
-    {file = "anemoi_utils-0.4.39.tar.gz", hash = "sha256:b02f5dc4ec1b0a4b461f0e8ffaeba04bfe21029c5252798179c81dbdb0a4602d"},
+    {file = "anemoi_utils-0.4.40-py3-none-any.whl", hash = "sha256:42b806ff8f084258dd21e81e4dfec437927b39b00894d04013fb0bb9a9c233c1"},
+    {file = "anemoi_utils-0.4.40.tar.gz", hash = "sha256:270795a9fdd8e4167b6a917bf126252d2272f1f8c4f841a46cbe629429689ad9"},
 ]
 
 [package.dependencies]
