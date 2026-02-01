@@ -1,0 +1,600 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Anemoi Environments &#8212; Anemoi Environments  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'readme';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Changelog" href="changelog.html" />
+    <link rel="prev" title="Anemoi Environments Documentation" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2026.2.0" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Anemoi Environments  documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Anemoi Environments
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Anemoi Environments
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Anemoi Environments</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="anemoi-environments">
+<h1>Anemoi Environments<a class="headerlink" href="#anemoi-environments" title="Link to this heading">#</a></h1>
+<p><a class="reference external" href="https://github.com/ecmwf/codex/blob/main/Project%20Maturity/readme.md"><img alt="Project Maturity: Emerging" src="https://github.com/ecmwf/codex/raw/refs/heads/main/Project%20Maturity/emerging_badge.svg" /></a> <a class="reference external" href="https://github.com/MeteoSwiss/anemoi-env/actions/workflows/CI_test.yaml"><img alt="CI Test Status" src="https://github.com/MeteoSwiss/anemoi-env/actions/workflows/CI_test.yaml/badge.svg" /></a> <a class="reference external" href="https://github.com/MeteoSwiss/anemoi-env/actions/workflows/CI_publish.yaml"><img alt="CI Publish Status" src="https://github.com/MeteoSwiss/anemoi-env/actions/workflows/CI_publish.yaml/badge.svg" /></a></p>
+<p>Provides a reproducible, versioned Python environment for Anemoi experiments.</p>
+<p><strong>anemoi-env</strong> is a meta-package that defines a standardized set of dependencies for machine learning and data science workflows. It contains no source code—only dependency declarations that are automatically versioned and published monthly.</p>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
+<section id="stable-release-locked-dependencies">
+<h3>Stable Release (Locked Dependencies)<a class="headerlink" href="#stable-release-locked-dependencies" title="Link to this heading">#</a></h3>
+<p>For reproducible environments, install a specific calendar-versioned release from PyPI:</p>
+<pre class="literal-block">$ pip install anemoi-env==2026.2.0</pre>
+<p>Or install the latest locked version from the main branch:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/MeteoSwiss/anemoi-env.git@main
+</pre></div>
+</div>
+</section>
+<section id="development-flexible-dependencies">
+<h3>Development (Flexible Dependencies)<a class="headerlink" href="#development-flexible-dependencies" title="Link to this heading">#</a></h3>
+<p>For development with the <strong>latest Anemoi features from main branches</strong> (no lock file):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/MeteoSwiss/anemoi-env.git@dev
+</pre></div>
+</div>
+<p><strong>Warning</strong>: The dev branch uses bleeding-edge dependencies and may be unstable.</p>
+</section>
+<section id="feature-testing-fixed-commit-shas">
+<h3>Feature Testing (Fixed Commit SHAs)<a class="headerlink" href="#feature-testing-fixed-commit-shas" title="Link to this heading">#</a></h3>
+<p>For testing specific features with reproducible Anemoi commits, create a feature branch from <strong>main</strong> (not dev):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>checkout<span class="w"> </span>main
+<span class="gp">$ </span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>feature-test/new-graphs
+</pre></div>
+</div>
+<p>Then edit <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> to pin specific commits:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[tool.poetry.dependencies]</span>
+<span class="n">anemoi-datasets</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">git</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/ecmwf/anemoi-datasets&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rev</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;abc123def&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="n">anemoi-graphs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">git</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/ecmwf/anemoi-core.git&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">subdirectory</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;graphs&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rev</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;def456abc&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="c1"># ... other packages with fixed revisions</span>
+</pre></div>
+</div>
+<p>Run <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">lock</span></code> to generate a lock file for this specific combination, then install:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>poetry<span class="w"> </span>lock
+<span class="gp">$ </span>poetry<span class="w"> </span>install
+</pre></div>
+</div>
+<p>This approach provides reproducibility while testing bleeding-edge features before they’re released to PyPI.</p>
+</section>
+</section>
+<section id="advanced-installation">
+<h2>Advanced Installation<a class="headerlink" href="#advanced-installation" title="Link to this heading">#</a></h2>
+<section id="cuda-specific-pytorch-versions">
+<h3>CUDA-Specific PyTorch Versions<a class="headerlink" href="#cuda-specific-pytorch-versions" title="Link to this heading">#</a></h3>
+<p>By default, <code class="docutils literal notranslate"><span class="pre">anemoi-env</span></code> installs PyTorch with CPU support or CUDA support based on what’s available in the default PyPI index. To install a <strong>specific CUDA version</strong> (e.g., CUDA 12.1), use PyTorch’s extra index URL:</p>
+<pre class="literal-block">$ pip install anemoi-env==2026.2.0 --extra-index-url <a class="reference external" href="https://download.pytorch.org/whl/cu121">https://download.pytorch.org/whl/cu121</a>
+$ pip install anemoi-env==2026.2.0 --extra-index-url <a class="reference external" href="https://download.pytorch.org/whl/cpu">https://download.pytorch.org/whl/cpu</a></pre>
+</section>
+<section id="installing-anemoi-package-extras">
+<h3>Installing Anemoi Package Extras<a class="headerlink" href="#installing-anemoi-package-extras" title="Link to this heading">#</a></h3>
+<p>Some Anemoi packages provide optional features via extras (e.g., <code class="docutils literal notranslate"><span class="pre">anemoi-graphs[tri]</span></code> for trimesh support). To use these extras while respecting the tested dependency versions from <code class="docutils literal notranslate"><span class="pre">anemoi-env</span></code>:</p>
+<pre class="literal-block">$ pip install anemoi-env==2026.2.0
+$ pip install &quot;anemoi-graphs[tri]&quot;</pre>
+<p><strong>Why install in two steps?</strong></p>
+<ul class="simple">
+<li><p>Installing <code class="docutils literal notranslate"><span class="pre">anemoi-env</span></code> first locks all core Anemoi packages to tested, compatible versions</p></li>
+<li><p>Installing the extra second (e.g., <code class="docutils literal notranslate"><span class="pre">[tri]</span></code>) adds optional dependencies (like <code class="docutils literal notranslate"><span class="pre">trimesh</span></code>) with version constraints that are compatible with the already-installed <code class="docutils literal notranslate"><span class="pre">anemoi-graphs</span></code></p></li>
+<li><p>If you directly <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">trimesh</span></code> without the extra, you might get an incompatible version that hasn’t been tested with Anemoi</p></li>
+</ul>
+<p>Always check each Anemoi package’s documentation for available extras.</p>
+</section>
+</section>
+<section id="branching-strategy">
+<h2>Branching Strategy<a class="headerlink" href="#branching-strategy" title="Link to this heading">#</a></h2>
+<p>This repository uses a multi-branch strategy with different dependency sources:</p>
+<ul class="simple">
+<li><p><strong>main</strong>: Contains <code class="docutils literal notranslate"><span class="pre">poetry.lock</span></code> and uses <strong>stable PyPI releases</strong> of all dependencies. Updated automatically on the 1st of every month via CI. Each update creates a calendar-versioned release (e.g., <code class="docutils literal notranslate"><span class="pre">2025.10.0</span></code>) and publishes to PyPI. Use this for reproducible, production-ready environments.</p></li>
+<li><p><strong>dev</strong>: Contains <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> with <strong>no lock file</strong> and uses <strong>bleeding-edge versions</strong> from Anemoi package main branches (via git dependencies). Used for development against the latest Anemoi features. Not published to PyPI.</p></li>
+<li><p><strong>feature-test/</strong>: Custom feature branches with <strong>fixed commit SHAs</strong> for each Anemoi package. Includes <code class="docutils literal notranslate"><span class="pre">poetry.lock</span></code> for reproducible testing of specific feature combinations. Useful for validating new features before they reach PyPI. Not published.</p></li>
+</ul>
+</section>
+<section id="continuous-integration">
+<h2>Continuous Integration<a class="headerlink" href="#continuous-integration" title="Link to this heading">#</a></h2>
+<p>The repository includes automated CI/CD workflows:</p>
+<ul class="simple">
+<li><p><strong>CI Test</strong> (<code class="docutils literal notranslate"><span class="pre">CI_test.yaml</span></code>): Runs on every push and pull request. Tests installation and verifies that all Anemoi packages can be imported successfully.</p></li>
+<li><p><strong>CI Publish</strong> (<code class="docutils literal notranslate"><span class="pre">CI_publish.yaml</span></code>): Runs on the 1st of every month at 3 AM UTC. Automatically:</p>
+<ol class="arabic simple">
+<li><p>Updates <code class="docutils literal notranslate"><span class="pre">poetry.lock</span></code> with latest compatible versions</p></li>
+<li><p>Updates version to current date (<code class="docutils literal notranslate"><span class="pre">YYYY.MM.patch</span></code>)</p></li>
+<li><p>Updates Changelogs with the new release information</p></li>
+<li><p>Creates a git tag</p></li>
+<li><p>Publishes the new release to PyPI</p></li>
+</ol>
+</li>
+</ul>
+<p>This ensures monthly snapshots of the Anemoi ecosystem are automatically published when updates are available.</p>
+</section>
+<section id="versioning">
+<h2>Versioning<a class="headerlink" href="#versioning" title="Link to this heading">#</a></h2>
+<p>Uses <strong>Calendar Versioning (CalVer)</strong>: <code class="docutils literal notranslate"><span class="pre">YYYY.MM.patch</span></code></p>
+<p>Each monthly release represents a snapshot of the dependency tree at that point in time. The patch number increments for additional releases within the same month (e.g., <code class="docutils literal notranslate"><span class="pre">2025.10.0</span></code>, <code class="docutils literal notranslate"><span class="pre">2025.10.1</span></code>, <code class="docutils literal notranslate"><span class="pre">2025.11.0</span></code>).</p>
+</section>
+<section id="what-s-included">
+<h2>What’s Included<a class="headerlink" href="#what-s-included" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Anemoi Packages</strong>:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">anemoi-datasets</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">anemoi-graphs</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">anemoi-inference</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">anemoi-models</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">anemoi-registry</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">anemoi-training</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">anemoi-utils</span></code></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="development-setup-with-poetry">
+<h2>Development Setup with Poetry<a class="headerlink" href="#development-setup-with-poetry" title="Link to this heading">#</a></h2>
+<p><strong>Note</strong>: This package is a meta-package with no source code. Development primarily involves updating dependencies in <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>.</p>
+<section id="local-development">
+<h3>Local Development<a class="headerlink" href="#local-development" title="Link to this heading">#</a></h3>
+<p>Clone and install in development mode:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/MeteoSwiss/anemoi-env.git
+<span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>anemoi-env
+<span class="gp">$ </span>git<span class="w"> </span>checkout<span class="w"> </span>dev
+<span class="gp">$ </span>poetry<span class="w"> </span>install
+</pre></div>
+</div>
+</section>
+<section id="generate-documentation">
+<h3>Generate Documentation<a class="headerlink" href="#generate-documentation" title="Link to this heading">#</a></h3>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>poetry<span class="w"> </span>run<span class="w"> </span>sphinx-build<span class="w"> </span>doc<span class="w"> </span>doc/_build
+</pre></div>
+</div>
+<p>Then open the index.html file generated in <em>anemoi-env/doc/_build/</em>.</p>
+</section>
+<section id="usage-for-reproducible-research">
+<h3>Usage For Reproducible Research<a class="headerlink" href="#usage-for-reproducible-research" title="Link to this heading">#</a></h3>
+<p>Always specify the exact version in your project dependencies:</p>
+<p><strong>For stable PyPI releases:</strong></p>
+<p>In <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>:</p>
+<pre class="literal-block">[tool.poetry.dependencies]
+anemoi-env = &quot;2026.2.0&quot;</pre>
+<p>Or in <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>:</p>
+<pre class="literal-block">anemoi-env==2026.2.0</pre>
+<p><strong>For testing specific feature combinations:</strong></p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[tool.poetry.dependencies]</span>
+<span class="n">anemoi-env</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">git</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/MeteoSwiss/anemoi-env.git&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rev</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;feature-test/new-graphs&quot;</span><span class="w"> </span><span class="p">}</span>
+</pre></div>
+</div>
+<p>This ensures your research uses a specific, reproducible set of dependencies—either from PyPI (stable) or from a pinned feature branch (testing).</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Anemoi Environments Documentation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="changelog.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Changelog</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stable-release-locked-dependencies">Stable Release (Locked Dependencies)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#development-flexible-dependencies">Development (Flexible Dependencies)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-testing-fixed-commit-shas">Feature Testing (Fixed Commit SHAs)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-installation">Advanced Installation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-specific-pytorch-versions">CUDA-Specific PyTorch Versions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-anemoi-package-extras">Installing Anemoi Package Extras</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#branching-strategy">Branching Strategy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-integration">Continuous Integration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#versioning">Versioning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-s-included">What’s Included</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#development-setup-with-poetry">Development Setup with Poetry</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#local-development">Local Development</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-documentation">Generate Documentation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usage-for-reproducible-research">Usage For Reproducible Research</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/readme.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, MeteoSwiss.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
