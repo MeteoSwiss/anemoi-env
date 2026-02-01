@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "anemoi-env"
-version = "2026.1.0"
+version = "2026.2.0"
 description = "Provides a reproducible, versioned Python environment for Anemoi experiments."
 license = "BSD-3-Clause"
 authors = ["Hugues de Laroussilhe <hugues.delaroussilhe@meteoswiss.ch>"]

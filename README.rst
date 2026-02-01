@@ -16,7 +16,7 @@ Anemoi Environments
    :target: https://github.com/MeteoSwiss/anemoi-env/actions/workflows/CI_publish.yaml
    :alt: CI Publish Status
 
-.. |release_version| replace:: 2026.1.0
+.. |release_version| replace:: 2026.2.0
 
 Provides a reproducible, versioned Python environment for Anemoi experiments.
 
