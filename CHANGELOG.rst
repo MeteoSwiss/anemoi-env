@@ -2,6 +2,21 @@
 Changelog
 =========
 
+Version 2026.3.0 (2026-03-01)
+=============================
+
+Anemoi Package Versions
+------------------------
+
+* **anemoi-datasets**: ``0.5.34``
+* **anemoi-graphs**: ``0.8.5``
+* **anemoi-inference**: ``0.9.1``
+* **anemoi-models**: ``0.12.1``
+* **anemoi-registry**: ``0.2.4``
+* **anemoi-training**: ``0.9.1``
+* **anemoi-transform**: ``0.1.27``
+* **anemoi-utils**: ``0.5.0``
+
 Version 2026.2.0 (2026-02-01)
 =============================
 
